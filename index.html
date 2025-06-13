@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unidad Educativa San Vicente de Paul - Información de Docentes</title>
+  <meta name="description" content="Página con información detallada de los docentes de la Unidad Educativa San Vicente de Paul, sus especialidades y cursos." />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #eaf4fc;
+      color: #1a2a52;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #b3d4fc;
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #073763;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav {
+      background: #d9eaff;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 10px 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    nav button {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      color: #073763;
+      cursor: pointer;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    nav button:hover, nav button.active {
+      background: #73b7f7;
+      color: white;
+      font-weight: 600;
+    }
+    .tab-content {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .tab-content.active {
+      display: block;
+      opacity: 1;
+    }
+    .tab-content h2 {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #055298;
+    }
+    .tab-content h2 img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .tab-content p {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: #1a2a52;
+    }
+
+    /* Estilo para el cuadro de información (Introducción, Misión, Visión) */
+    .info-box {
+      background-color: #f0f8ff; /* azul muy suave */
+      border: 2px solid #73b7f7;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(115, 183, 247, 0.4);
+      margin-top: 15px;
+      color: #1a2a52;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    /* Docentes cards */
+    .docentes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 10px;
+    }
+    .card {
+      background: #d9eaff;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(3,54,115,0.15);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(3,54,115,0.3);
+    }
+    .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #73b7f7;
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 1.3rem;
+      color: #073763;
+    }
+    .card p {
+      margin: 0 0 10px;
+      font-weight: 600;
+      color: #055298;
+      font-size: 1.1rem;
+    }
+    .badge {
+      display: inline-block;
+      background: #73b7f7;
+      color: white;
+      border-radius: 15px;
+      padding: 5px 12px;
+      font-size: 0.85rem;
+      margin: 2px 4px 0 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Unidad Educativa Fiscomisional "San Vicente de Paul"
+</header>
+
+<nav>
+  <button class="active" onclick="showTab(event, 'introduccion')">Introducción</button>
+  <button onclick="showTab(event, 'vision')">Visión</button>
+  <button onclick="showTab(event, 'mision')">Misión</button>
+  <button onclick="showTab(event, 'profesores')">Bloque de Profesores 2do BGU</button>
+</nav>
+
+<section id="introduccion" class="tab-content active">
+  <h2><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWX7W_BJy1U5vIU4rQw-Dyg-SJgUgHwL54sg&s" alt="Introducción" />Introducción</h2>
+  <div class="info-box">
+    <p>
+      Bienvenidos a la página oficial de docentes de la Unidad Educativa Fiscomisional "San Vicente de Paul". En este espacio encontrarás información detallada sobre nuestros profesores, sus especialidades y los cursos que imparten en el segundo año de Bachillerato General Unificado (2do BGU). Nuestro compromiso es brindar una educación de calidad basada en valores, con un enfoque moderno y actualizado que permita a nuestros estudiantes desarrollar sus habilidades académicas y personales en un ambiente motivador y colaborativo. 
+      <br /><br />
+      Esta plataforma busca ser un canal abierto para que estudiantes, padres de familia y comunidad educativa conozcan mejor a quienes forman parte de nuestro equipo docente, facilitando el contacto y fomentando una comunicación efectiva. Estamos orgullosos del profesionalismo y dedicación de nuestros profesores, quienes están siempre dispuestos a innovar y a acompañar a los estudiantes en su camino hacia el éxito.
+    </p>
+  </div>
+</section>
+
+<section id="vision" class="tab-content">
+  <h2><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQchTE3V57g5-V7qy2XwK8EcKy_hpryvNZLSg&s" alt="Visión" />Visión</h2>
+  <div class="info-box">
+    <p>
+      Nuestra visión es ser una institución educativa reconocida por su excelencia académica, innovación y formación integral, comprometida con el desarrollo de ciudadanos críticos, responsables y creativos. Aspiramos a generar un impacto positivo en la comunidad, formando personas capaces de enfrentar los desafíos del siglo XXI con valores sólidos y habilidades diversas.
+      <br /><br />
+      Visualizamos un futuro en el que nuestros estudiantes sean líderes en sus ámbitos, preparados para contribuir activamente al bienestar social y al desarrollo sostenible. Para ello, trabajamos en un entorno que promueve el aprendizaje significativo, la inclusión, el respeto por la diversidad y la tecnología como herramienta clave en la enseñanza y el aprendizaje.
+    </p>
+  </div>
+</section>
+
+<section id="mision" class="tab-content">
+  <h2><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKZ92YdoHnxzrh2JpKdUGHmLO4wwYAmmr94g&s" alt="Misión" />Misión</h2>
+  <div class="info-box">
+    <p>
+      La misión de la Unidad Educativa Fiscomisional "San Vicente de Paul" es formar estudiantes con una educación integral, fundamentada en principios éticos y académicos, que les permita desarrollarse como individuos competentes y conscientes de su entorno. Fomentamos un ambiente educativo que promueve el respeto, la equidad y el trabajo colaborativo, garantizando que cada alumno reciba una atención personalizada y una formación que responda a los retos actuales.
+      <br /><br />
+      Nos dedicamos a preparar a los jóvenes para que sean capaces de enfrentar con éxito los retos académicos y personales, promoviendo el pensamiento crítico, la creatividad y la responsabilidad social. Trabajamos en estrecha colaboración con la familia y la comunidad para fortalecer los valores y habilidades que contribuyen a la formación de ciudadanos comprometidos y éticos.
+    </p>
+  </div>
+</section>
+ 
+<section id="profesores" class="tab-content">
+  <h2>Bloque de Profesores 2do BGU</h2>
+  <div class="docentes">
+
+    <!-- Lic.Jenny Guaman -->
+    <div class="card">
+      <img src="https://scontent.fuio1-1.fna.fbcdn.net/v/t1.15752-9/496509138_1896562874440058_8438356563971904136_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=6phcNVP5PE8Q7kNvwFLoiMu&_nc_oc=Adml6AuvgionRyyoGmHGX5xSLb3AtZl4M9xpetRVUH6ABWcSn2l6b-yecEiO0Uff1r8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fuio1-1.fna&oh=03_Q7cD2gGh-NQi7HcuCoCiWsEzYBQHUsN_uCXFSlgvO3fb-mptrg&oe=68718D5E" alt="Jenny Guaman" />
+      <h3>Lic.Jenny Guaman</h3>
+      <p><strong>Títulos:</strong> Magíster en Historia</p>
+      <p><strong>Materia:</strong> Historia</p>
+      <p><strong>Forma de enseñanza:</strong> "Aplico mucho la metodología constructiva del conocimiento, participación estudiantil y trabajos de mejora" </p>
+      <div class="badge">Historia Antigua</div>
+      <div class="badge">Historia Contemporánea</div>
+      <div class="badge">Historia Mundial</div>
+    </div>
+
+    <!-- Yasmil Lopez -->
+    <div class="card">
+      <img src="https://scontent.fuio1-1.fna.fbcdn.net/v/t39.30808-6/468356217_592399939855633_4377668251985799461_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=848AyZwTh2oQ7kNvwGwPxMx&_nc_oc=Adm7znUBroKrE53RODYOlGf6gYY8AoF5_SmZFDpOgs6Ie51Iti61H5ppwtODBa7h_xI&_nc_zt=23&_nc_ht=scontent.fuio1-1.fna&_nc_gid=fSrwFMeMzH2LPjXZgFncIw&oh=00_AfP_LEAAGrbjrdXRhaxSi9rCkSzGY-ggIaMMmOJzfRtJ6A&oe=68514082" />
+      <h3> Lic.Yasmil Lopez</h3>
+      <p><strong>Título:</strong> Licenciada en Matemáticas</p>
+      <p><strong>Materia:</strong> Matemáticas</p>
+      <p><strong>Forma de enseñanza:</strong> Enfoque lógico y resolución de problemas aplicados y acompaña de manera cercana el avance del estudiantado, adaptándose a su ritmo y ofreciendo apoyo personalizado ante cualquier inquietud académica, promoviendo así un aprendizaje participativo y significativo.
+</p>
+      <div class="badge">Álgebra</div>
+      <div class="badge">Geometría</div>
+      <div class="badge">Trigonometría</div>
+    </div>
+
+    <!-- Ing. Silvia Chacha -->
+    <div class="card">
+      <img src="https://scontent.fuio1-2.fna.fbcdn.net/v/t1.15752-9/503943163_1704998673556165_3004226614510711707_n.png?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_ohc=byw2Iq3zKz0Q7kNvwG-XhqJ&_nc_oc=AdmvexpT_d-S5zbNoMec6ZjsaO-yMbihRI-6iy5mSCbfdc4p57fUO7B_lIVvN785cA8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fuio1-2.fna&oh=03_Q7cD2gHJR2eHVmcWgbvK4wcRsp64fX56q4AhseVPKmnWRqiHkQ&oe=6872B80E" alt="Ing. Silvia Chacha" />
+      <h3>Ing. Silvia Chacha</h3>
+      <p><strong>Título:</strong> Ingeniera Física</p>
+      <p><strong>Materia:</strong> Física/Ciudadania</p>
+      <p><strong>Forma de enseñanza:</strong> Su práctica docente se fundamenta en el desarrollo de ejercicios prácticos como estrategia principal para consolidar el aprendizaje, procurando avanzar al ritmo del grupo estudiantil. Mantiene una disposición constante para brindar acompañamiento individualizado, resolviendo dudas y fortaleciendo la comprensión de los contenidos, con el objetivo de garantizar un proceso formativo inclusivo y efectivo.</p>
+      <div class="badge">Cinemática</div>
+      <div class="badge">Dinámica</div>
+      <div class="badge">Tipos de democracia.</div>
+      <div class="badge">Sufragio y sistemas electorales.</div>
+    </div>
+
+    <!-- Ing.Javier Cruz -->
+    <div class="card">
+      <img src="https://scontent.fuio1-1.fna.fbcdn.net/v/t1.15752-9/505802105_691552923627818_8377486892549728352_n.png?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=mF7dImlPgFUQ7kNvwGeG8My&_nc_oc=AdlpCBvZ1XNrPkwjqYycSZ5VNY17fgbgs5u81RMzEGrmRX5m8tGjhIDG6LREcijcWgU&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fuio1-1.fna&oh=03_Q7cD2gFtEvCS8rdTqUtI8r4Yh5u59c6XhE8Ia0EClbESjNOHWw&oe=6872B090" alt="Ing.Javier Cruz" />
+      <h3>Ing.Javier Cruz</h3>
+      <p><strong>Título:</strong> Arquitecto</p>
+      <p><strong>Materia:</strong> Dibujo Técnico</p>
+      <p><strong>Forma de enseñanza:</strong> Promueve el desarrollo de proyectos prácticos que combinan el uso de software de diseño digital con la elaboración de maquetas físicas, facilitando la comprensión visual y aplicada de los contenidos. Esta metodología fortalece la creatividad, el trabajo en equipo y la conexión entre teoría y práctica.</p>
+      <div class="badge">Perspectiva</div>
+      <div class="badge">Croquis</div>
+      <div class="badge">Planos Arquitectónicos</div>
+      <div class="badge">Diseño Asistido</div>
+    </div>
+
+<!-- Dra.Concepcion Carrion -->
+    <div class="card">
+      <img src="https://scontent.fuio1-2.fna.fbcdn.net/v/t1.15752-9/494575875_676864938451066_4854943425165448763_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=g7IWql-CGXoQ7kNvwFQaiP-&_nc_oc=AdlgIWQRW6A29LlLoUjk8Yct2uEd-4XwUqV05w8nh9mqQa-dYKv0JGRKYzqDHe-g17g&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fuio1-2.fna&oh=03_Q7cD2gHg7FagxCJo_fNFrf8lFi5MHAz7uVLqhRsHOMDwBcHT-w&oe=6871870D" />
+      <h3>Dra.Concepcion Carrion</h3>
+      <p><strong>Títulos:</strong>  Docente de quimica
+<br/>
+Licenciada en química y biologia
+<br/>
+ Magister en biologia
+<br/>
+ Mediadora de la judicatura
+<br/> </p>
+      <p><strong>Materia:</strong> Quimica</p>
+      <p><strong>Forma de enseñanza:</strong> Activa y participativa dinámica con contenidos actuales que a los jóvenes les guste investigar principalmente a lo que se relaciona con la ciencia y la tecnología porque "Yo los veo como futuros científicos y profesionales que buscan el futuro del país".</p>
+      <div class="badge">Química Orgánica</div>
+      <div class="badge">Química Inorgánica</div>
+      <div class="badge">Bioquímica</div>
+      
+    </div>
+
+<!-- Dra.Carmita Altamirano -->
+    <div class="card">
+      <img src="https://scontent.fuio1-2.fna.fbcdn.net/v/t1.6435-9/94779505_799661427108557_8812253291925733376_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=cfT09xx8VA0Q7kNvwGJ4Bof&_nc_oc=AdnZ_00zpQLoQGIjXHsURj-k8p-nFLRtBV7mwQBVuUs5CrE-LxNimeiiYa52xxAC0jo&_nc_zt=23&_nc_ht=scontent.fuio1-2.fna&_nc_gid=9q6TcObaUNGLBjoiRpn81w&oh=00_AfPWFN_LHbaTpBrZHGA3GVBCDiq-cXb6tsmztgJKu1Ma2w&oe=68717858" />
+      <h3>Dra.Carmita Altamirano</h3>
+      <p><strong>Títulos:</strong> Doctora en gerencia educativa
+<br/>
+Maestría en pedagogía
+<br/> 
+Maestría en liderazgo educativo </p>
+      <p><strong>Materia:</strong> Educacion Cultural y Artistica </p>
+      <p><strong>Forma de enseñanza:</strong> Aplico la pedagogía del amor con todo cariño
+<br/>
+ Aplico el método holistico integral total</p>
+      <div class="badge">Artes Visuales</div>
+      <div class="badge">Música</div>
+      <div class="badge">Danza</div>
+      <div class="badge">Teatro</div>
+    </div>
+
+<!-- Lic.Micaela De la Torre -->
+    <div class="card">
+      <img src="https://scontent.fuio1-2.fna.fbcdn.net/v/t1.15752-9/504540365_3848186475398160_2192262866551168416_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0024fc&_nc_ohc=UIQEpnrPtEcQ7kNvwGn_Emc&_nc_oc=Adn9eoCumecDGHgc6D1ncUh9fAgk7sTQjIOiTYlp2YNLzTgSLOaeW54Su7YTBZRUloI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fuio1-2.fna&oh=03_Q7cD2gGOD-sv2t0hbRr9n-tsHdu5MYkKI820FfcXWcVQ2PHzMg&oe=68719B8F"Silvia Chacha" />
+      <h3>Lic.Micaela De la Torre</h3>
+      <p><strong>Practicas:</strong> Unidad Educativa "Camilos Gallegos Toledo"
+<br/>
+Unidad Educativa Particular "San Ignacio" 
+</p>
+      <p><strong>Materia:</strong> Lengua Extranjera</p>
+      <p><strong>Forma de enseñanza:</strong> "Poseo habilidades demostradas en la aplicacion de metodologias innovadoras que integran tecnologia y recursos multimedia para mejorar las destrezas en el idioma inglés".</p>
+      <div class="badge">English Literature</div>
+      <div class="badge">English Grammar</div>
+      <div class="badge">Conversation</div>
+    </div>
+
+<!-- Ing.Angela Peñafiel -->
+    <div class="card">
+      <img src="https://scontent.fuio1-1.fna.fbcdn.net/v/t1.15752-9/505810884_707233972086195_5089602502455223940_n.png?_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=1rXR7rot0wsQ7kNvwFQTa2r&_nc_oc=AdloC4T1RSitRRVcY5U8Jf9q7TCECVyEqXKM2eh9E9IehhGsJpC5nHsa-AF7OUgKxn8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fuio1-1.fna&oh=03_Q7cD2gF7AS73CQnn3y5B6v_G4_gvueFUawS7YIQr-bPLJHipQA&oe=6872B8A9" />
+      <h3>Ing.Angela Peñafiel</h3>
+      <p><strong>Título:</strong> Una maestría en educación y gestión del aprendizaje gestionado por TICS</p>
+      <p><strong>Materia:</strong> Emprendimiento</p>
+      <p><strong>Forma de enseñanza:</strong> La práctica que aplica la enseñanza retroalimentativa basado en las experiencias previas con docentes</p>
+      <div class="badge">Planificación Empresarial</div>
+      <div class="badge">Marketing</div>
+      <div class="badge">Finanzas</div>
+      <div class="badge">Desarrollo de Proyectos</div>
+    </div>
+
+<!-- Ing.Hernan Espinoza -->
+    <div class="card">
+      <img src="https://scontent.fuio1-1.fna.fbcdn.net/v/t1.15752-9/504478582_1230007788634866_4736838253844244224_n.png?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=qctUJUmLI4IQ7kNvwHqyq_g&_nc_oc=Adl0q46a0WOQyguVyVfyrgMEtuldTPdcgM9XgLLDhT5bm5YtdnTJWOGeo6wMpJkMU9Y&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fuio1-1.fna&oh=03_Q7cD2gFYJEIWQtdAMe_TAFPtvRRlWEruJ7zufScPAQMrWmDLJQ&oe=6872A772" />
+      <h3>Ing.Hernan Espinoza</h3>
+      <p><strong>Título:</strong> Magister en Ingenieria Informatica</p>
+      <p><strong>Materia:</strong> Informatica</p>
+      <p><strong>Experiencia:</strong> 3 años en la Unidad Educativa Fiscomisional "San Vicente De Paul"
+<br/>
+1 Año Instituto Superior Tecnologico Universitario.</p>
+      <div class="badge">Programación</div>
+      <div class="badge">Redes de Computadoras</div>
+      <div class="badge">Seguridad Informática</div>
+      <div class="badge">Bases de Datos</div>
+    </div>
+
+<!-- Lic.Johnny Muñoz -->
+    <div class="card">
+      <img src="https://scontent.fuio1-1.fna.fbcdn.net/v/t1.15752-9/494572419_1347175993594027_806525669981141065_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=4X3ycY4ABH0Q7kNvwHKFVQt&_nc_oc=AdmO0nTtIUD-SFc89Gm27LtDf8WgV5ViJD5UiSPHYE1Nj4vDM17kSoLEyuvXFnwag9I&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fuio1-1.fna&oh=03_Q7cD2gHKXLZJjUMTYwofm77P7ZzAClb3Rl67t-tPJzzpqQXo8w&oe=6872B871" alt="Silvia Chacha" />
+      <h3>Lic.Johnny Muñoz</h3>
+      <p><strong>Título:</strong> Psicología en la UTPL
+<br/> 
+Bachillerato en Teología Universidad de Navarra
+</p>
+      <p><strong>Materia:</strong> ERE/Filosofia</p>
+      <p><strong>Forma de enseñanza:</strong> "Mi forma de enseñanza es la metodología de Erca y He inspirado últimamente mi enseñanza en el pequeño método de San Vicente de Paúl"</p>
+      <div class="badge">Ética</div>
+      <div class="badge">Lógica</div>
+      <div class="badge">Filosofía Clásica</div>
+      <div class="badge">Educación Religiosa</div>
+    </div>
+
+<!-- Lic. Elsi Villalba -->
+    <div class="card">
+      <img src="https://scontent.fuio1-2.fna.fbcdn.net/v/t1.15752-9/506857770_1759092374694902_79765651568274080_n.png?_nc_cat=107&ccb=1-7&_nc_sid=0024fc&_nc_ohc=yEatYQ0fOTMQ7kNvwF7N7mt&_nc_oc=Adkiv8g5KgeDb5YZeVTD5wyBPTebrSDNxz56mvWQuGRJ7UrudYFQmIuzcXoTzRVwckk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fuio1-2.fna&oh=03_Q7cD2gEzR5ySmeQ2scFJTNbt1yPvuF_l74qPZ_ZIGCtXvqwraA&oe=6872C2EC" />
+      <h3>Lic. Elsi Villalba</h3>
+      <p><strong>Título:</strong> Licenciado en Ciencias de la Educación, especialidad Biología y Química</p>
+      <p><strong>Materia:</strong> Biologia</p>
+      <p><strong>Forma de enseñanza:</strong> Realiza actividades prácticas en laboratorios y entornos simulados donde los estudiantes pueden aplicar los conocimientos aprendidos en clase. Estas experiencias fortalecen el aprendizaje, desarrollan habilidades técnicas y mejoran el análisis y la resolución de problemas.</p>
+      <div class="badge">Biología Molecular</div>
+      <div class="badge">Genética</div>
+      <div class="badge">Ecología</div>
+      <div class="badge">Microbiología</div>
+    </div>
+
+<!-- Lic. Yadira Nataly -->
+    <div class="card">
+      <img src="https://scontent.fuio1-1.fna.fbcdn.net/v/t1.15752-9/506175027_1396287794927114_8709894151991257943_n.png?_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=QrNv-2Dv5ZYQ7kNvwGgHv_4&_nc_oc=AdnZZc8Kf2ukLxE7qSZaXEeuwXZXU1iXghO3iJnTr-Np0ssA20nai2L_D_907nzkvdQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fuio1-1.fna&oh=03_Q7cD2gHywuiZmebVe8wdR8Tdof8Sn3ZPZ2-4T4J9b9wQZsLKYw&oe=6872CD22"Yasmil Lopez" />
+      <h3>Lic. Yadira Nataly</h3>
+      <p><strong>Título:</strong> Licenciada En Pedagogia De La Actividad Fisica y Deporte
+LCDA</p>
+      <p><strong>Materia:</strong> Educacion Fisica</p>
+      <p><strong>Forma de enseñanza:</strong> "Soy una docente comprometida con el desarrollo integral de mis estudiantes. Mi práctica educativa se fundamenta en el enfoque humanista, priorizando un ambiente de respeto, empatía y confianza, donde cada alumno se sienta valorado y motivado a aprender según sus propias necesidades y ritmos"
+</p>
+<p><strong>Publicacion De Articulo De Investigacion</strong> 
+“ La Fuerza Muscular En Adultos Con Insuficiencia Reenal y Su Influencia En La Masa Muscular”
+REVISTA LATINOAMERICA DE CIENCIAS Y HUMANIDADES ( LATAM )</p>
+      <div class="badge">Principios del Basketball</div>
+      <div class="badge">Entrenamiento Deportivo</div>
+      <div class="badge">Nutrición Deportiva</div>
+      <div class="badge">Deportes Colectivos</div>
+    </div>
+
+<script>
+  function showTab(evt, tabName) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => {
+      tab.classList.remove('active');
+    });
+    const buttons = document.querySelectorAll('nav button');
+    buttons.forEach(btn => {
+      btn.classList.remove('active');
+    });
+    document.getElementById(tabName).classList.add('active');
+    evt.currentTarget.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
